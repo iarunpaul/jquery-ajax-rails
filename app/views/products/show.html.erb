@@ -1,15 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1> Product </h1>
+<h1 id="header"> Product </h1>
 <h3> <%= @product.name %></h3>
 <p> <%= @product.price %> </p>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
-<h3> <%= pluralize(@product.reviews.count, "reviews") %> </h3>
+<h3 id="reviews-count"> <%= pluralize(@product.reviews.count, "reviews") %> </h3>
 <%= render 'form_review' %>
 <%# @reviews.each do |review| %>
 	<%#= review.name %>
 	<%#= review.review %>
 <%# end %>
-<%= render @product.reviews %>
+<div id="reviews">
+	<%= render @product.reviews %>
+</div>
 

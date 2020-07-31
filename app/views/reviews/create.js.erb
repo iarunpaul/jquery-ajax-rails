@@ -1,0 +1,4 @@
+$('#header').before('<div id="flash-notice"><%= escape_javascript(notice) %></div>');
+$('#reviews-count').html('<%= escape_javascript(pluralize(@product.reviews.count, "Reviews")) %>');
+$('#reviews').append('<%= escape_javascript(render @review) %>');
+$('#new_review')[0].reset();

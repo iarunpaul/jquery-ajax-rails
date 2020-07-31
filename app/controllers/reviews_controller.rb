@@ -3,9 +3,13 @@ class ReviewsController < ApplicationController
 		@product = Product.find(params[:product_id])
 		@review = @product.reviews.new(review_params)
 		if @review.save
-			redirect_to @product, notice: 'Review created.'
+			flash[:notice] = 'Review created.'
 		else
-			redirect_to product_path(@product), notice: 'Review did not saved.'
+			flash[:notice] = 'Review did not save.'
+		end
+		respond_to do |format|
+			format.html { redirect_to @product }
+			format.js
 		end
 	end
 
