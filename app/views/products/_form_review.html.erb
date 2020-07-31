@@ -1,0 +1,7 @@
+<%= form_for @review, url: product_reviews_path(@product) do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<%= f.label :review %>
+	<%= f.text_field :review %>
+	<%= f.submit 'Submit' %>
+<% end %>
