@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
 	def create
+		sleep 2
 		@product = Product.find(params[:product_id])
 		@review = @product.reviews.new(review_params)
 		if @review.save
